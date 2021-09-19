@@ -1,14 +1,15 @@
-import { Button } from '@material-ui/core';
+import { Container } from "@material-ui/core";
+import EventsList from "../../components/events/events-list";
+import { getAllEvents } from "../../events-data";
 
-const AllEventPage = () => {
+function AllEventPage() {
+  const events = getAllEvents();
+
   return (
-    <div>
-      All Events
-      <Button color="secondary" variant="outlined">
-        A new button
-      </Button>
-    </div>
+    <Container maxWidth="md">
+      <EventsList events={events} />
+    </Container>
   );
-};
+}
 
 export default AllEventPage;

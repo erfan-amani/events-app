@@ -1,5 +1,9 @@
-const HomePage = () => {
-  return <div>Home Page</div>;
-};
+import { Link } from "@material-ui/core";
+import EventsList from "../components/events/events-list";
+import { getAllEvents } from "../events-data";
 
-export default HomePage;
+export default function HomePage() {
+  const events = getAllEvents();
+
+  return <EventsList events={events} />;
+}
